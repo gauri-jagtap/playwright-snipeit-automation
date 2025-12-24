@@ -21,15 +21,35 @@ The suite creates real assets using the prefix `TESTMAC-xxxxxx`, checks them out
 
 ## Repository Structure (Important)
 
-After extraction, the relevant paths are:
+playwright-snipeit-automation
+│   README.md
+│   SnipeIt.Playwright.Tests.csproj
+│
+├───Data
+│       TestData.cs
+│
+├───Models
+│       AssetData.cs
+│
+├───Pages
+│       AssetDetailsPage.cs
+│       AssetsPage.cs
+│       BasePage.cs
+│       CategoriesPage.cs
+│       LoginPage.cs
+│       ManufacturersPage.cs
+│       ModelsPage.cs
+│
+├───Tests
+│       AssetLifecycleTests.cs
+│       BaseTest.cs
+│       PrerequisitesTests.cs
+│
+└───Utils
+        Select2Helper.cs
+        WaitUtils.cs
 
-- Solution Root  
-  `SnipeITAutomationSuite\`
-
-- Test Project (IMPORTANT)  
-  `SnipeITAutomationSuite\SnipeIt.Playwright.Tests\`
-
-> All Playwright installation and build commands **must be run inside the test project folder**.
+> All Playwright installation and build commands **must be run from project root(where SnipeIt.Playwright.Tests.csproj file is)**.
 
 ---
 
@@ -52,8 +72,8 @@ dotnet --version
 Open **PowerShell** in the directory containing `SnipeITAutomationSuite.zip`
 
 ```powershell
-tar -xf SnipeITAutomationSuite.zip
-cd .\SnipeITAutomationSuite\SnipeIt.Playwright.Tests\
+tar -xf playwright-snipeit-automation-master.zip
+cd .\playwright-snipeit-automation-master
 ```
 
 ---
@@ -171,3 +191,8 @@ Search for:
 
 - Playwright installation **must** be done from the test project folder
 - Debug mode is recommended for first-time reviews
+
+  ## Known Limitations
+
+- When running prerequisite tests in **debug (UI) mode**, you may encounter errors related to the Hardware / Model pages. This is expected in the demo environment, as certain permissions are restricted and model validation may not be accessible via the UI.
+- Intermittent **timeout errors** may occur if the demo environment is being reset. If this happens, wait a few moments and rerun the tests.
