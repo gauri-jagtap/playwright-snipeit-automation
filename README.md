@@ -21,6 +21,7 @@ The suite creates real assets using the prefix `TESTMAC-xxxxxx`, checks them out
 
 ## Repository Structure (Important)
 
+```
 playwright-snipeit-automation
 │   README.md
 │   SnipeIt.Playwright.Tests.csproj
@@ -48,6 +49,7 @@ playwright-snipeit-automation
 └───Utils
         Select2Helper.cs
         WaitUtils.cs
+```
 
 > All Playwright installation and build commands **must be run from project root(where SnipeIt.Playwright.Tests.csproj file is)**.
 
